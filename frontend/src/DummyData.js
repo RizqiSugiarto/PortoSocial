@@ -51,8 +51,8 @@ export const Users = [
   },
   {
     id: 11,
-    profilePicture: "11.png",
-    username: "Sayang",
+    profilePicture: "6.jpeg",
+    username: "quebec mambu",
   },
 ];
 

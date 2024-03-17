@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const cloudinary = require("../config/assetStore");
+const cloudinary = require("../../config/assetStore");
 
 router.post("/img", (req, res) => {
   const { photo } = req.files;

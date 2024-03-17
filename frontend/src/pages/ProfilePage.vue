@@ -31,6 +31,11 @@ export default {
 
 <template>
   <TopBar />
+  <div
+    v-if="isModalVisible"
+    class="fixed inset-0 flex items-center justify-center z-50"
+    style="background-color: rgba(0, 0, 0, 0.5)"
+  ></div>
   <div class="flex">
     <SideBar />
     <div style="flex: 9">
@@ -49,16 +54,20 @@ export default {
             style="border: 3px solid white"
           />
         </div>
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center relative">
           <h4 class="text-xl font-bold">El Macho</h4>
           <span class="font-light">Hello gaesss</span>
-          <button @click="openModal">Edit Profile</button>
+          <div
+            class="bg-gray-200 absolute left-0 top-16 items-center rounded-md"
+          >
+            <button class="w-28 h-8" @click="openModal">Edit Profile</button>
+          </div>
         </div>
         <EditForm v-show="isModalVisible" @close="closeModal" />
       </div>
-      <div class="flex">
+      <div class="flex mt-12">
         <FeedProfile />
-        <ProfileRightBar />
+        <ProfileRightBar class="mt-8" />
       </div>
     </div>
   </div>
